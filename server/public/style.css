@@ -1,4 +1,4 @@
-/* Estilos para el cuerpo de la página */
+/* Cuerpo de la página */
 body {
     font-family: 'Arial', sans-serif;
     margin: 20px;
@@ -6,7 +6,7 @@ body {
     background-color: #f2f2f2;
 }
 
-/* Estilos para el título */
+/* El título */
 h1 {
     background-color: #1db2e8;
     color: #fff;
@@ -15,7 +15,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Estilos para el contenedor principal */
+/* El contenedor principal */
 .container {
     text-align: center;
     margin: 0 auto; 
@@ -24,7 +24,7 @@ h1 {
 }
 
 
-/* Estilos para los controles */
+/* Los controles */
 .controls {
     display: flex;
     justify-content: center;
@@ -32,18 +32,18 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Estilos para las etiquetas de los controles */
+/* Las etiquetas de los controles */
 label {
     font-weight: bold;
     margin-right: 10px;
 }
 
-/* Estilos para el selector de color */
+/* El selector de color */
 #colorPicker {
     margin-right: 20px;
 }
 
-/* Estilos para el control deslizante de tamaño */
+/* El control deslizante de tamaño */
 #sizeSlider {
     width: 200px; 
     margin-left: 10px; 
@@ -51,7 +51,17 @@ label {
     margin-bottom: 0; 
 }
 
-/* Estilos para el botón de borrar */
+/* La selección de formas */
+#shapeSelect {
+    margin-top: 10px; /* Espacio superior para separar de los controles anteriores */
+    width: auto;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* El botón de borrar */
 #clearButton {
     background-color: #3392ff;
     color: #fff;
@@ -60,6 +70,7 @@ label {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    border-radius: 5px;
 }
 
 #clearButton:hover {

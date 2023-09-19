@@ -19,6 +19,14 @@
 <label for="sizeSlider">Tamaño:</label>
 <input type="range" id="sizeSlider" min="1" max="100" onchange="cambiarSize(this.value)">
 
+<!-- Agrega una lista desplegable para seleccionar la forma -->
+<label for="shapeSelect">Forma:</label>
+<select id="shapeSelect" onchange="changeShape(this.value)">
+    <option value="circle">Círculo</option>
+    <option value="square">Cuadrado</option>
+    <option value="triangle">Triángulo</option>
+</select>
+
 <!-- Agrega un botón para borrar dibujos -->
 <button id="clearButton" onclick="clearCanvas()">Limpiar</button>
 

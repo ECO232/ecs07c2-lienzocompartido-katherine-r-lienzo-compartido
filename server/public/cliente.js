@@ -5,6 +5,7 @@ let r = 0;
 let g = 0;
 let b = 0;
 let identificador = 0;
+let forma = 'circle';
 
 let elementos = [];
 let cursores = [];
@@ -22,9 +23,21 @@ function draw() {
     background(220);
 
     //pintamos los items dentro de la lista de elementos
-    elementos.forEach((elemento) =>{
-        fill (elemento.r, elemento.g, elemento.b);
-        ellipse(elemento.x, elemento.y, elemento.size, elemento.size);
+    elementos.forEach((elemento) => {
+        fill(elemento.r, elemento.g, elemento.b);
+
+        // Dibuja la forma según la selección del usuario
+        if (elemento.forma === 'circle') {
+            ellipse(elemento.x, elemento.y, elemento.size, elemento.size);
+        } else if (elemento.forma === 'square') {
+            rect(elemento.x, elemento.y, elemento.size, elemento.size);
+        } else if (elemento.forma === 'triangle') {
+            triangle(
+                elemento.x, elemento.y - elemento.size / 2,
+                elemento.x - elemento.size / 2, elemento.y + elemento.size / 2,
+                elemento.x + elemento.size / 2, elemento.y + elemento.size / 2
+            );
+        }
     });
 
     //pintamos los items dentro de la lista de cursores
@@ -42,7 +55,8 @@ function mousePressed() {
         r: r,
         g: g,
         b: b,
-        size
+        size,
+        forma
     };
     //se envia el elemento bajo el tag: "enviar-elemento"
     socket.emit('enviar-elemento', elemento);
@@ -57,7 +71,8 @@ function mouseDragged() {
         g: g,
         b: b,
         size,
-        id: identificador
+        id: identificador,
+        forma
     };
     //enviamos el elemento con el tag: "enviar-cursor"
     socket.emit('enviar-cursor', elemento);
@@ -101,6 +116,11 @@ function hexToRgb(hex) {
     const b = bigint & 255;
 
     return { r, g, b };
+}
+
+// Esta función se llama cuando el usuario cambia la forma en la lista desplegable
+function changeShape(newShape) {
+    forma = newShape;
 }
 
 // Esta función se llama cuando el usuario cambia el color en el selector de color.
