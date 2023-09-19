@@ -1,0 +1,27 @@
+<!-- //Tiene la página inicial (única en este ejercicio), está ahí (dentro de public) para ser entregado al cliente web cuando se hace la petición a la ip (127.0.0.1:3000, asumiendo el puerto) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js Socket actividad</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Cliente</h1>
+<!-- Agrega elementos de interfaz para seleccionar un nuevo color -->
+<label for="colorPicker">Color:</label>
+<input type="color" id="colorPicker" onchange="cambiarColor(this.value)">
+
+<!-- Agrega elementos de interfaz para seleccionar un nuevo tamaño -->
+<label for="sizeSlider">Tamaño:</label>
+<input type="range" id="sizeSlider" min="1" max="100" onchange="cambiarSize(this.value)">
+
+<!-- Agrega un botón para borrar dibujos -->
+<button id="clearButton" onclick="clearCanvas()">Limpiar</button>
+
+    <script src="cliente.js"></script>
+</body>
+</html>
